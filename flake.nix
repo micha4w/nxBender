@@ -14,7 +14,8 @@
         pkgs = nixpkgs.legacyPackages.${system};
         mach = mach-nix.lib.${system};
         nxBender = mach.buildPythonPackage {
-          name = "nxBender";
+          pname = "nxBender";
+          version = "0.3.0";
           src = ./.;
           requirements = builtins.readFile ./requirements.txt;
           propagatedBuildInputs = [ pkgs.ppp ];
